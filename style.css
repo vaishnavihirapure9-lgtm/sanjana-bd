@@ -1,0 +1,915 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f1ff;
+    color: #5d4b6e;
+    overflow-x: hidden;
+}
+
+
+/* ================= COLORS ================= */
+
+:root {
+    --lavender: #d9c7f3;
+    --light-lavender: #eee5fb;
+    --pastel-purple: #cbb4e9;
+    --deep-lavender: #8f72b5;
+
+    --pastel-pink: #f4d7e7;
+    --light-pink: #fbeaf3;
+
+    --cream: #fffafd;
+    --text: #625170;
+}
+
+
+/* ================= GENERAL PAGE ================= */
+
+.page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= OPENING ================= */
+
+.opening-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 15% 20%, #f5eafa 0%, transparent 28%),
+        radial-gradient(circle at 85% 70%, #f9e3ef 0%, transparent 30%),
+        linear-gradient(
+            135deg,
+            #f5edfc,
+            #fdf3f8,
+            #eee5fb
+        );
+}
+
+
+/* Soft glow */
+
+.opening-page::before {
+    content: "";
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(211, 190, 238, 0.18);
+
+    filter: blur(80px);
+
+    top: -250px;
+    left: -250px;
+}
+
+
+/* Opening content */
+
+.opening-content {
+    text-align: center;
+    z-index: 5;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.tiny-text {
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    color: #9a80bb;
+
+    margin-bottom: 20px;
+}
+
+
+/* Opening photo */
+
+.opening-photo-frame {
+    width: min(430px, 82vw);
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 2px solid rgba(192, 165, 220, 0.35);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(126, 94, 158, 0.18);
+
+    transform: rotate(-1deg);
+}
+
+.opening-photo-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 20px;
+}
+
+
+/* Opening heading */
+
+.opening-content h1 {
+    margin-top: 25px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(42px, 7vw, 65px);
+
+    color: #8064a8;
+
+    font-weight: 600;
+}
+
+.opening-subtitle {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #b18cc0;
+
+    margin-top: 3px;
+}
+
+
+/* ================= FLOATING DECORATIONS ================= */
+
+.floating-heart,
+.floating-star {
+    position: absolute;
+
+    color: rgba(165, 125, 202, 0.35);
+
+    pointer-events: none;
+
+    animation: floatAround 5s ease-in-out infinite;
+}
+
+.floating-heart {
+    font-size: 45px;
+}
+
+.floating-star {
+    font-size: 35px;
+}
+
+.heart1 {
+    left: 10%;
+    top: 18%;
+}
+
+.heart2 {
+    right: 13%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.heart3 {
+    left: 18%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.heart4 {
+    right: 8%;
+    bottom: 20%;
+    animation-delay: 3s;
+}
+
+.star1 {
+    left: 27%;
+    top: 12%;
+}
+
+.star2 {
+    right: 28%;
+    top: 15%;
+    animation-delay: 1.5s;
+}
+
+.star3 {
+    left: 8%;
+    bottom: 35%;
+    animation-delay: 2s;
+}
+
+.star4 {
+    right: 20%;
+    bottom: 12%;
+    animation-delay: 2.5s;
+}
+
+
+/* ================= BUTTON ================= */
+
+.next-btn {
+    position: absolute;
+
+    right: 35px;
+    bottom: 30px;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background: rgba(188, 160, 222, 0.78);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(125, 94, 160, 0.18);
+
+    transition: 0.3s ease;
+
+    z-index: 20;
+}
+
+.next-btn span {
+    margin-left: 6px;
+    font-size: 18px;
+}
+
+.next-btn:hover {
+    transform: translateY(-4px);
+    background: #9e82c2;
+
+    box-shadow:
+        0 12px 28px rgba(125, 94, 160, 0.25);
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-page {
+
+    padding: 80px 7% 140px;
+
+    background:
+        radial-gradient(circle at 10% 5%, #eadcf8 0%, transparent 25%),
+        radial-gradient(circle at 90% 50%, #f8ddea 0%, transparent 25%),
+        #faf5ff;
+}
+
+
+/* Header */
+
+.gallery-header {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+}
+
+.small-heading {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #a184bd;
+
+    margin-bottom: 8px;
+}
+
+.gallery-header h2,
+.letter-intro h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-weight: 600;
+
+    font-size: clamp(45px, 7vw, 70px);
+
+    line-height: 0.95;
+
+    color: #765c99;
+}
+
+.gallery-intro {
+
+    margin-top: 20px;
+
+    color: #927da2;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ================= PINTEREST GRID ================= */
+
+.photo-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    columns: 3 280px;
+
+    column-gap: 20px;
+}
+
+
+/* Important:
+   NO fixed height.
+   This keeps the original image proportions.
+*/
+
+.photo-card {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    break-inside: avoid;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: white;
+
+    padding: 7px;
+
+    box-shadow:
+        0 10px 30px rgba(127, 97, 155, 0.12);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.photo-card img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 15px;
+
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover {
+
+    transform: translateY(-6px) rotate(0.3deg);
+
+    box-shadow:
+        0 18px 40px rgba(127, 97, 155, 0.2);
+}
+
+.photo-card:hover img {
+    transform: scale(1.025);
+}
+
+
+/* ================= MEMORY END ================= */
+
+.more-memories {
+
+    text-align: center;
+
+    margin: 70px auto 30px;
+
+    font-family: "Caveat", cursive;
+
+    color: #8c72a6;
+
+    font-size: 29px;
+}
+
+.more-memories span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #b58bc0;
+
+    letter-spacing: 10px;
+}
+
+.little-line {
+
+    width: 70px;
+    height: 2px;
+
+    background: #d6c1e9;
+
+    margin: 0 auto 20px;
+
+    border-radius: 10px;
+}
+
+.gallery-next {
+    bottom: 30px;
+}
+
+
+/* ================= LETTER PAGE ================= */
+
+.letter-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #e6d8f7 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #f8dfea 0%, transparent 30%),
+        linear-gradient(
+            135deg,
+            #f5edfc,
+            #fff5fa
+        );
+}
+
+.letter-intro {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.letter-intro h2 {
+    font-size: clamp(43px, 7vw, 65px);
+}
+
+
+/* ================= ENVELOPE ================= */
+
+.envelope-container {
+
+    cursor: pointer;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+.envelope {
+
+    position: relative;
+
+    width: 270px;
+    height: 175px;
+
+    margin: auto;
+
+    perspective: 800px;
+
+    filter: drop-shadow(
+        0 20px 25px rgba(126, 91, 160, 0.18)
+    );
+}
+
+
+/* Envelope body */
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #cdb6e8;
+
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
+
+/* Letter sticking out */
+
+.envelope-letter {
+
+    position: absolute;
+
+    width: 220px;
+    height: 135px;
+
+    left: 25px;
+    top: 10px;
+
+    background: #fffafd;
+
+    border-radius: 5px;
+
+    z-index: 2;
+
+    transition: 0.5s ease;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #b08dcc;
+
+    font-size: 35px;
+}
+
+
+/* Front */
+
+.envelope-front {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 135px solid transparent;
+    border-right: 135px solid transparent;
+
+    border-bottom: 95px solid #bfa4df;
+
+    z-index: 4;
+}
+
+
+/* Flap */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 135px solid transparent;
+    border-right: 135px solid transparent;
+
+    border-top: 95px solid #dcc9ef;
+
+    transform-origin: top;
+
+    transition: transform 0.7s ease;
+
+    z-index: 5;
+}
+
+
+/* Hover */
+
+.envelope-container:hover .envelope {
+
+    transform: translateY(-5px);
+
+}
+
+.envelope-container:hover .envelope-letter {
+
+    transform: translateY(-8px);
+}
+
+.click-envelope {
+
+    margin-top: 25px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    color: #9778b6;
+}
+
+
+/* ================= LETTER POPUP ================= */
+
+.letter-box {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(91, 65, 112, 0.25);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.letter-box.show {
+    display: flex;
+}
+
+
+/* Actual paper */
+
+.letter-paper {
+
+    position: relative;
+
+    width: min(650px, 94vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 50px 45px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.95),
+            rgba(253,246,255,0.98)
+        );
+
+    border-radius: 25px;
+
+    border: 2px solid #eadcf6;
+
+    box-shadow:
+        0 30px 80px rgba(83, 59, 103, 0.25);
+
+    font-family: "Caveat", cursive;
+
+    color: #665373;
+
+    font-size: 23px;
+
+    line-height: 1.55;
+
+    animation: letterPop 0.7s cubic-bezier(.17,.67,.3,1.3);
+}
+
+.letter-paper p {
+    margin-bottom: 18px;
+}
+
+.letter-greeting {
+
+    font-size: 38px;
+
+    color: #8466a7;
+}
+
+.final-line {
+
+    text-align: center;
+
+    color: #9a6fb0;
+
+    font-size: 29px;
+
+    margin-top: 25px;
+}
+
+.signature {
+
+    text-align: right;
+
+    color: #a37eb8;
+
+    font-size: 25px;
+}
+
+
+/* Close button */
+
+.close-letter {
+
+    position: absolute;
+
+    right: 15px;
+    top: 12px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eee1f8;
+
+    color: #80659c;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+
+/* Letter sparkles */
+
+.letter-sparkle {
+
+    position: absolute;
+
+    color: #c7a8df;
+
+    font-size: 27px;
+
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+.sparkle-a {
+    top: 20px;
+    left: 30px;
+}
+
+.sparkle-b {
+    top: 35px;
+    right: 40px;
+}
+
+.sparkle-c {
+    bottom: 30px;
+    right: 30px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes letterPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.75) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes floatAround {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .opening-page {
+        padding: 30px 20px;
+    }
+
+    .opening-photo-frame {
+        width: 88vw;
+    }
+
+    .next-btn {
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 13px;
+
+        padding: 11px 17px;
+    }
+
+    .gallery-page {
+
+        padding: 60px 18px 120px;
+    }
+
+    .photo-grid {
+
+        columns: 2 150px;
+
+        column-gap: 12px;
+    }
+
+    .photo-card {
+
+        padding: 4px;
+
+        border-radius: 14px;
+
+        margin-bottom: 12px;
+    }
+
+    .photo-card img {
+        border-radius: 10px;
+    }
+
+    .more-memories {
+        font-size: 25px;
+    }
+
+    .letter-paper {
+
+        padding: 40px 25px;
+
+        font-size: 20px;
+    }
+
+    .letter-greeting {
+        font-size: 32px;
+    }
+
+    .envelope {
+        transform: scale(0.9);
+    }
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Khushi ♡</title>
+
+    <!-- Cute handwritten fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating sparkles -->
+    <div class="sparkles"></div>
+
+
+    <!-- ================= OPENING PAGE ================= -->
+
+    <section id="opening" class="page opening-page">
+
+        <div class="floating-heart heart1">♡</div>
+        <div class="floating-heart heart2">♡</div>
+        <div class="floating-heart heart3">♡</div>
+        <div class="floating-heart heart4">♡</div>
+
+        <div class="floating-star star1">✦</div>
+        <div class="floating-star star2">✧</div>
+        <div class="floating-star star3">✦</div>
+        <div class="floating-star star4">⋆</div>
+
+        <div class="opening-content">
+
+            <p class="tiny-text">a little something for you ♡</p>
+
+            <div class="opening-photo-frame">
+                <img src="images/opening.jpg" alt="Birthday memory">
+            </div>
+
+            <h1>Happy Birthday, Khushi! ♡</h1>
+
+            <p class="opening-subtitle">
+                today is all about you ✨
+            </p>
+
+        </div>
+
+        <button class="next-btn" onclick="showGallery()">
+            Next <span>→</span>
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= GALLERY PAGE ================= -->
+
+    <section id="gallery" class="page gallery-page hidden">
+
+        <div class="gallery-decoration decoration-one">♡</div>
+        <div class="gallery-decoration decoration-two">✦</div>
+        <div class="gallery-decoration decoration-three">♡</div>
+
+        <div class="gallery-header">
+
+            <p class="small-heading">some of my favourite memories</p>
+
+            <h2>
+                Our little gallery ♡
+            </h2>
+
+            <p class="gallery-intro">
+                A tiny collection of some of the moments
+                I'm really glad I got to share with you.
+            </p>
+
+        </div>
+
+
+        <!-- Pinterest style gallery -->
+
+        <div class="photo-grid">
+
+            <!-- PHOTO 1 -->
+            <div class="photo-card">
+                <img src="images/photo1.jpg" alt="Memory 1">
+            </div>
+
+            <!-- PHOTO 2 -->
+            <div class="photo-card">
+                <img src="images/photo2.jpg" alt="Memory 2">
+            </div>
+
+            <!-- PHOTO 3 -->
+            <div class="photo-card">
+                <img src="images/photo3.jpg" alt="Memory 3">
+            </div>
+
+            <!-- PHOTO 4 -->
+            <div class="photo-card">
+                <img src="images/photo4.jpg" alt="Memory 4">
+            </div>
+
+            <!-- PHOTO 5 -->
+            <div class="photo-card">
+                <img src="images/photo5.jpg" alt="Memory 5">
+            </div>
+
+            <!-- PHOTO 6 -->
+            <div class="photo-card">
+                <img src="images/photo6.jpg" alt="Memory 6">
+            </div>
+
+            <!-- PHOTO 7 -->
+            <div class="photo-card">
+                <img src="images/photo7.jpg" alt="Memory 7">
+            </div>
+
+            <!-- PHOTO 8 -->
+            <div class="photo-card">
+                <img src="images/photo8.jpg" alt="Memory 8">
+            </div>
+
+    
+
+        </div>
+
+
+        <div class="more-memories">
+
+            <div class="little-line"></div>
+
+            <p>
+                We really need to take more pictures together...
+            </p>
+
+            <span>♡ ♡ ♡</span>
+
+        </div>
+
+
+        <button class="next-btn gallery-next" onclick="showLetter()">
+            What I Feel About You <span>→</span>
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= LETTER PAGE ================= -->
+
+    <section id="letter" class="page letter-page hidden">
+
+        <div class="letter-sparkles"></div>
+
+        <div class="letter-intro">
+
+            <p class="small-heading">okay... one last thing ♡</p>
+
+            <h2>There's something<br>I'd like you to read.</h2>
+
+        </div>
+
+
+        <!-- ENVELOPE -->
+
+        <div class="envelope-container" onclick="openEnvelope()">
+
+            <div class="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-letter">
+                    <span>♡</span>
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+            </div>
+
+            <p class="click-envelope">
+                click the little envelope ♡
+            </p>
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div id="letterBox" class="letter-box">
+
+            <button class="close-letter" onclick="closeLetter()">×</button>
+
+            <div class="letter-paper">
+
+                <div class="letter-sparkle sparkle-a">✦</div>
+                <div class="letter-sparkle sparkle-b">♡</div>
+                <div class="letter-sparkle sparkle-c">✧</div>
+
+                <p class="letter-greeting">
+                    Dear Khushi ♡
+                </p>
+
+                <p>
+                    I don't think I say this enough, but I'm really
+                    grateful that you're a part of my life.
+                </p>
+
+                <p>
+                    Somehow, all the random little moments,
+                    stupid pictures, silly faces, conversations,
+                    laughs and absolutely unserious memories
+                    become some of my favourite things.
+                </p>
+
+                <p>
+                    You are one of those people who make ordinary
+                    days feel a little more special just by being there.
+                </p>
+
+                <p>
+                    I hope this year brings you everything you deserve —
+                    happiness, peace, lots of reasons to smile,
+                    and obviously... MANY more pictures together.
+                </p>
+
+                <p>
+                    So here's to another year of you being you,
+                    and us creating more memories that we'll laugh
+                    about later. ♡
+                </p>
+
+                <p class="final-line">
+                    Happy Birthday, Khushi. ✨
+                </p>
+
+                <p class="signature">
+                    with lots of love ♡
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
